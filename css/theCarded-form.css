@@ -42,7 +42,7 @@
 }
 
 .theCarded-info-regulatoryFailure::before {
-    content: "\2717";
+    content: "\1F6D1";
     color: #FF0000;
 }
 
