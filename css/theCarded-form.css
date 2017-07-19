@@ -7,12 +7,30 @@
     margin: 1em 0 1em 0;
 }
 
+.theCarded-form-selectContainer-level1 {
+    margin-left: 0em;
+}
+
+.theCarded-form-selectContainer-level2 {
+    margin-left: 0.25em;
+}
+
+.theCarded-form-selectContainer-level3 {
+    margin-left: 0.50em;
+}
+
 .theCarded-info {
     margin-left: 0.5em;
 }
 
 .theCarded-info-explanation::before {
     content: "?";
+    font-weight: bold;
+    color: #0000FF;
+}
+
+.theCarded-info-emphasis::before {
+    content: "!";
     font-weight: bold;
     color: #0000FF;
 }

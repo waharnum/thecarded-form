@@ -37,7 +37,9 @@
                 </div>
 
                 <div data-bind="visible: identifyingInformation.choice() === 'Yes' && questioningCircumstancesAllowed.choice() === 'No'">
-
+                    <div class="theCarded-info theCarded-info-emphasis">
+                        This sounds like a carding ("street check") interaction; as of January 1, 2017, there are <a href="https://news.ontario.ca/mcscs/en/2016/03/final-regulations-regarding-police-street-checks.html?_ga=2.131135244.2075062116.1500430602-1842141470.1498686883">new regulations in force in Ontario</a> about how police must conduct themselves during this kind of interaction. How did they do?
+                    </div>
                     <div class="theCarded-form-selectContainer theCarded-form-selectContainer-level3">
                         <label for="tellYouWhy">Did they tell you why they wanted your identifying information?</label>
                         <select id="tellYouWhy" data-bind="options: tellYouWhy.options, optionsCaption: 'Choose...', value: tellYouWhy.choice">
@@ -90,8 +92,6 @@
                     </div>
                 </div>
             </div>
-
-
         </form>
 
         <script src="js/theCarded-form.js"></script>
