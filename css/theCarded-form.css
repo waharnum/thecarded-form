@@ -7,6 +7,12 @@
     margin: 1em 0 1em 0;
 }
 
+.theCarded-form-selectContainer select {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 1em;
+}
+
 .theCarded-form-selectContainer-level1 {
     margin-left: 0em;
 }
