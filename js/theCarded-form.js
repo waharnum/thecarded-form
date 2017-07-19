@@ -16,7 +16,7 @@ var viewModel = {
             ],
         choice: ko.observable("")
     },
-    questioningCircumstances: getYesNoChoice(),
+    questioningCircumstancesAllowed: getYesNoChoice(),
     identifyingInformation: getYesNoChoice(),
     tellYouWhy: getYesNoChoice(),
     invalidReason: getYesNoChoice(),

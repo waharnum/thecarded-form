@@ -15,8 +15,8 @@
             <div data-bind="visible: whatHappened.choice() === 'I was asked questions by the police.'">
 
                 <div class="theCarded-form-selectContainer theCarded-form-selectContainer-level2">
-                    <label for="questioningCircumstances">Were the questions about a specific crime, during the execution of a warrant such as a search warrant, or during a traffic stop?</label>
-                    <select id="questioningCircumstances" data-bind="options: questioningCircumstances.options, optionsCaption: 'Choose...', value: questioningCircumstances.choice">
+                    <label for="questioningCircumstancesAllowed">Were the questions about a specific crime, during the execution of a warrant such as a search warrant, or during a traffic stop?</label>
+                    <select id="questioningCircumstancesAllowed" data-bind="options: questioningCircumstancesAllowed.options, optionsCaption: 'Choose...', value: questioningCircumstancesAllowed.choice">
                     </select>
                 </div>
 
@@ -29,7 +29,13 @@
                     </div>
                 </div>
 
-                <div data-bind="visible: identifyingInformation.choice() === 'Yes' && questioningCircumstances.choice() === 'No'">
+                <div data-bind="visible: identifyingInformation.choice() === 'Yes' && questioningCircumstancesAllowed.choice() === 'Yes'">
+                    <div class="theCarded-info theCarded-info-regulatoryCompliance">
+                        The police can request identifying information from you in these circumstances without it being a carding / street check situation.
+                    </div>
+                </div>
+
+                <div data-bind="visible: identifyingInformation.choice() === 'Yes' && questioningCircumstancesAllowed.choice() === 'No'">
 
                     <div class="theCarded-form-selectContainer theCarded-form-selectContainer-level3">
                         <label for="tellYouWhy">Did they tell you why they wanted your identifying information?</label>
