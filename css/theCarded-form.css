@@ -1,0 +1,27 @@
+.theCarded-form {
+    font-size: 1.2em;
+}
+
+.theCarded-form-selectContainer {
+    margin: 1em 0 1em 0;
+}
+
+.theCarded-info {
+    margin-left: 0.5em;
+}
+
+.theCarded-info-explanation::before {
+    content: "?";
+    font-weight: bold;
+    color: #0000FF;
+}
+
+.theCarded-info-regulatoryFailure::before {
+    content: "\2717";
+    color: #FF0000;
+}
+
+.theCarded-info-regulatoryCompliance::before {
+    content: "\2714";
+    color: #00FF00;
+}

@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <link rel="stylesheet" href="css/theCarded-form.css">
+    </head>
+    <body>
+        <form class="theCarded-form">
+            <div class="theCarded-form-selectContainer theCarded-form-selectContainer-level1">
+                <label for="whatHappened">What happened?</label>
+                <select id="whatHappened" data-bind="options: whatHappened.options, optionsCaption: 'Choose...', value: whatHappened.choice">
+                </select>
+            </div>
+
+            <div data-bind="visible: whatHappened.choice() === 'I was asked questions by the police.'">
+
+                <div class="theCarded-form-selectContainer theCarded-form-selectContainer-level2">
+                    <label for="questioningCircumstances">Were the questions about a specific crime, during the execution of a warrant such as a search warrant, or during a traffic stop?</label>
+                    <select id="questioningCircumstances" data-bind="options: questioningCircumstances.options, optionsCaption: 'Choose...', value: questioningCircumstances.choice">
+                    </select>
+                </div>
+
+                <div class="theCarded-form-selectContainer theCarded-form-selectContainer-level2">
+                    <label for="identifyingInformation">Did they request identifying information from you?</label>
+                    <select id="identifyingInformation" data-bind="options: identifyingInformation.options, optionsCaption: 'Choose...', value: identifyingInformation.choice">
+                    </select>
+                    <div class="theCarded-info theCarded-info-explanation">
+                        This doesn't have to have been an actual piece of identification like a driver's license; it could be something as simple as asking your name and/or address.
+                    </div>
+                </div>
+
+                <div data-bind="visible: identifyingInformation.choice() === 'Yes' && questioningCircumstances.choice() === 'No'">
+
+                    <div class="theCarded-form-selectContainer theCarded-form-selectContainer-level3">
+                        <label for="tellYouWhy">Did they tell you why they wanted your identifying information?</label>
+                        <select id="tellYouWhy" data-bind="options: tellYouWhy.options, optionsCaption: 'Choose...', value: tellYouWhy.choice">
+                        </select>
+                        <div data-bind="visible: tellYouWhy.choice() === 'No'" class="theCarded-info theCarded-info-regulatoryFailure">
+
+                            The police officer should have told you why they wanted your identifying information.
+                        </div>
+                        <div data-bind="visible: tellYouWhy.choice() === 'Yes'" class="theCarded-info theCarded-info-regulatoryCompliance">
+                            The police officer must tell you why they wanted your identifying information. Additionally, their reasons cannot have been:
+                            <ul>
+                                <li>based on race</li>
+                                <li>arbitrary or meaningless</li>
+                                <li>only because you were in a "high-crime" area</li>
+                                <li>because you refused to answer a question or walked away</li>
+                            </ul>
+                            <div class="theCarded-form-selectContainer">
+                                <label for="invalidReason">Do you think the request for identifying information was based on any of the prohibited reasons above?</label>
+                                <select id="invalidReason" data-bind="options: invalidReason.options, optionsCaption: 'Choose...', value: invalidReason.choice">
+                                </select>
+                                <div data-bind="visible: invalidReason.choice() === 'Yes'" class="theCarded-info theCarded-info-regulatoryFailure">
+                                    The police cannot ask for personally identifying information just based on any of the above grounds.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="theCarded-form-selectContainer theCarded-form-selectContainer-level3">
+                        <label for="tellYouRefuse">Did they tell you that you could refuse to give them identifying information?</label>
+                        <select id="tellYouRefuse" data-bind="options: tellYouRefuse.options, optionsCaption: 'Choose...', value: tellYouRefuse.choice">
+                        </select>
+                        <div data-bind="visible: tellYouRefuse.choice() === 'No'" class="theCarded-info theCarded-info-regulatoryFailure">
+                            The police officer should have told you that you can refuse to give them any identifying information.
+                        </div>
+                        <div data-bind="visible: tellYouRefuse.choice() === 'Yes'" class="theCarded-info theCarded-info-regulatoryCompliance">
+                            The police officer must tell you that you can refuse to give them any identifying information.
+                        </div>
+                    </div>
+
+                    <div class="theCarded-form-selectContainer theCarded-form-selectContainer-level3">
+                        <label for="offerReceipt">Did they offer you a receipt?</label>
+                        <select id="offerReceipt" data-bind="options: offerReceipt.options, optionsCaption: 'Choose...', value: offerReceipt.choice">
+                        </select>
+                        <div data-bind="visible: offerReceipt.choice() === 'No'" class="theCarded-info theCarded-info-regulatoryFailure">
+                            They should have offered you a receipt, even if you refused to give them identifying information.
+                        </div>
+                        <div data-bind="visible: offerReceipt.choice() === 'Yes'" class="theCarded-info theCarded-info-regulatoryCompliance">
+                            The police officer must offer you a receipt for the interaction, even if you refused to give them identifying information.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+
+        <script src="js/theCarded-form.js"></script>
+    </body>
+</html>
